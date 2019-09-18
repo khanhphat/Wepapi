@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.645
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shopk.UnitTest", "shopk.UnitTest\shopk.UnitTest.csproj", "{BC7DBB79-2DE1-42FC-A2EA-D27FE74D98B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shopk.WepApp", "shopk.WepApp\shopk.WepApp.csproj", "{504FC5F5-EF5B-4D94-BEFA-0389FE6EF9C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shopk.Data", "shopk.Data\shopk.Data.csproj", "{8562C803-1B14-4451-95E3-F703BF88857D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shopk.Model", "shopk.Model\shopk.Model.csproj", "{492B5DC3-18FC-4E48-AA57-2CBC62EAC9E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shopk.Service", "shopk.Service\shopk.Service.csproj", "{BD6FD623-04EF-4A1E-AE48-CAAA555A7AB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shopk.Common", "shopk.Common\shopk.Common.csproj", "{7600B584-57F0-4EA1-853A-D9C5D25CB302}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC7DBB79-2DE1-42FC-A2EA-D27FE74D98B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC7DBB79-2DE1-42FC-A2EA-D27FE74D98B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC7DBB79-2DE1-42FC-A2EA-D27FE74D98B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC7DBB79-2DE1-42FC-A2EA-D27FE74D98B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{504FC5F5-EF5B-4D94-BEFA-0389FE6EF9C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{504FC5F5-EF5B-4D94-BEFA-0389FE6EF9C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{504FC5F5-EF5B-4D94-BEFA-0389FE6EF9C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{504FC5F5-EF5B-4D94-BEFA-0389FE6EF9C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8562C803-1B14-4451-95E3-F703BF88857D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8562C803-1B14-4451-95E3-F703BF88857D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8562C803-1B14-4451-95E3-F703BF88857D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8562C803-1B14-4451-95E3-F703BF88857D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492B5DC3-18FC-4E48-AA57-2CBC62EAC9E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492B5DC3-18FC-4E48-AA57-2CBC62EAC9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492B5DC3-18FC-4E48-AA57-2CBC62EAC9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492B5DC3-18FC-4E48-AA57-2CBC62EAC9E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD6FD623-04EF-4A1E-AE48-CAAA555A7AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6FD623-04EF-4A1E-AE48-CAAA555A7AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6FD623-04EF-4A1E-AE48-CAAA555A7AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6FD623-04EF-4A1E-AE48-CAAA555A7AB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7600B584-57F0-4EA1-853A-D9C5D25CB302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7600B584-57F0-4EA1-853A-D9C5D25CB302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7600B584-57F0-4EA1-853A-D9C5D25CB302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7600B584-57F0-4EA1-853A-D9C5D25CB302}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8AF38E0-701C-4B9A-953B-0BE924060A82}
+	EndGlobalSection
+EndGlobal
