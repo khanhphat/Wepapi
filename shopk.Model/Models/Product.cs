@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using shopk.Model.Abstract;
+using System.Xml.Linq;
+
+namespace shopk.Model.Models
+{
+    [Table("Products")]
+    public class Product : Auditable
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int ID { get; set; }
+        [Required]
+        public string Name { get; set; }
+        [Required]
+        public string Alias { get; set; }
+        public int CategoryID { get; set; }
+        public string Image { get; set; }
+        public XElement MoreImages { get; set; }
+        public decimal Price { get; set;  } //decimal: tinhs so chinh xac
+        public decimal? PromotionPrice { get; set; }
+        public int? Warranty { get; set; }
+        public string Description { get; set; }
+        public string Content { get; set; }
+
+        public bool? HomeFlag { get; set; }
+        public bool? HotFlag { get; set; }
+        public bool? ViewCount { get; set; }
+
+        //trường de tham chieu
+        [ForeignKey("CategoryID")]
+        public virtual ProductCategory ProductCategory { get; set; }
+
+
+    }
+}
