@@ -14,7 +14,11 @@ namespace shopk.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SystemID { get; set; }
+        [MaxLength(50)]
+        [Required]
+        [Column(TypeName = "varchar")]
         public string Code { get; set; }
+        [MaxLength(50)]
         public string ValueString { get; set; }
         public int ValueInt { get; set; }
     }

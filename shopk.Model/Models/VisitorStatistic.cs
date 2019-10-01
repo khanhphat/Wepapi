@@ -12,8 +12,10 @@ namespace shopk.Model.Models
     public class VisitorStatistic
     {
         [Key]
-        public int VisitorID { get; set; }
+        public Guid VisitorID { get; set; }
+        [Required]
         public DateTime VisitedDate { get; set; }
+        [MaxLength(50)]
         public string IPAddress { get; set; }
     }
 }

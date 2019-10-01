@@ -15,9 +15,11 @@ namespace shopk.Model.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
 
-        public virtual IEnumerable<Menu> Menus { get; set; } // Khi menu truy van den menugroup 
+        public virtual IEnumerable<Menu> Menus { get; set; } // Khi menu truy van den menugroup :
+        //Bảng con thì có thuộc tính virtual
         //thi cai collection nay nos se chi ra.
     }
 }

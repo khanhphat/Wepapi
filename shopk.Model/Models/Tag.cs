@@ -12,8 +12,13 @@ namespace shopk.Model.Models
     public class Tag
     {
         [Key]
+        [MaxLength(50)]
         public string TagID { get; set; }
+        [MaxLength(50)]
+        [Required]
         public string TagName { get; set; }
+        [MaxLength(50)]
+        [Required]
         public string TagType { get; set; }
     }
 }

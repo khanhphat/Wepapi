@@ -15,12 +15,25 @@ namespace shopk.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PostCategoryId { get; set; }
-        public string PostCategoryName { get; set; }
-        public string PostCategoryAlias { get; set; }
-        public string PostCategoryDescription { get; set; }
-        public int ParentID { get; set; }
-        public string PostCategoryImage {get; set;}
-        public int DisplayOrder { get; set; }
+        [Required]
+        [MaxLength(256)]
+        public string Name { get; set; }
+
+        [Column(TypeName = "varchar")]
+        [Required]
+        [MaxLength(256)]
+        public string Alias { get; set; }
+
+        [MaxLength(500)]
+        public string Description { get; set; }
+
+        public int? ParentID { get; set; }
+        public int? DisplayOrder { get; set; }
+
+        [MaxLength(256)]
+        public string Image {get; set;}
+
+        
         public bool? HomeFlag { get; set; }
 
         public virtual IEnumerable<Post> Posts { get; set; }

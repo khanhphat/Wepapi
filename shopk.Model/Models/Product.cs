@@ -15,13 +15,20 @@ namespace shopk.Model.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public int ProductID { get; set; }
         [Required]
+        [MaxLength(256)]
         public string Name { get; set; }
         [Required]
+        [MaxLength(256)]
         public string Alias { get; set; }
+
+        [Required]
         public int CategoryID { get; set; }
+
+        [MaxLength(256)]
         public string Image { get; set; }
+
         public XElement MoreImages { get; set; }
         public decimal Price { get; set;  } //decimal: tinhs so chinh xac
         public decimal? PromotionPrice { get; set; }

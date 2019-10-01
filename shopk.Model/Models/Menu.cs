@@ -12,8 +12,10 @@ namespace shopk.Model.Models
     public class Menu
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
         [Required]
         public string URL { get; set; }
@@ -23,8 +25,8 @@ namespace shopk.Model.Models
         public int GroupID { get; set; } // Khoa ngoai
 
         [ForeignKey("GroupID")]
-        public virtual MenuGroup MenuGroup { get; set; } //Khoas ngoai
-
+        public virtual MenuGroup MenuGroup { get; set; } //Khoas ngoai lien ket den bang cha
+        [MaxLength(10)]
         public string Target { get; set; }
         [Required]
         public bool Status { get; set; }

@@ -13,6 +13,14 @@ namespace shopk.Model.Models
     {
         [Key]
         public int PostTagID { get; set; }
+        [Key]
         public string TagID { get; set; }
+
+        [ForeignKey("PostTagID")]
+        public virtual Post Post { get; set; }
+
+        [ForeignKey("TagID")]
+        public virtual Tag Tag { get; set; }
+
     }
 }

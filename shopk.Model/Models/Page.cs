@@ -14,10 +14,17 @@ namespace shopk.Model.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int PageID { get; set; }
+
+        [Required]
+        [MaxLength(256)]
         public string PageName { get; set; }
+
+        [Column(TypeName = "varchar")]
+        [Required]
+        [MaxLength(256)]
+        public string Alias { get; set; }
+
         public string Content { get; set; }
-        public string MetaKeyword { get; set; }
-        public string MetaDescription { get; set; }
-        public bool? Status { get; set; }
+       
     }
 }
