@@ -48,8 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Infrastructure-hatang\DbFactory.cs" />
+    <Compile Include="Infrastructure-hatang\Disposable.cs" />
+    <Compile Include="Infrastructure-hatang\IDbFactory.cs" />
+    <Compile Include="Infrastructure-hatang\IRepository.cs" />
+    <Compile Include="Infrastructure-hatang\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure-hatang\RepositoryBase.cs" />
+    <Compile Include="Infrastructure-hatang\ShopkEntities.cs" />
+    <Compile Include="Infrastructure-hatang\UnitOfWork.cs" />
+    <Compile Include="Migrations\201910051650020_InitiaDB4.cs" />
+    <Compile Include="Migrations\201910051650020_InitiaDB4.Designer.cs">
+      <DependentUpon>201910051650020_InitiaDB4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ProductCategoryRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -60,6 +75,15 @@
       <Project>{7600b584-57f0-4ea1-853a-d9c5d25cb302}</Project>
       <Name>shopk.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\shopk.Model\shopk.Model.csproj">
+      <Project>{492b5dc3-18fc-4e48-aa57-2cbc62eac9e5}</Project>
+      <Name>shopk.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910051650020_InitiaDB4.resx">
+      <DependentUpon>201910051650020_InitiaDB4.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
