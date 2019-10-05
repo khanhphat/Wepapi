@@ -10,6 +10,6 @@ namespace shopk.Data.Infrastructure_hatang
     //ap dụng mẫu factory trong design pattern
     public interface IDbFactory : IDisposable
     {
-        MyDbContext Init();//phương thức init dbcontext
+        MyDbContext Init();//phương thức init ra dbcontext
     }
 }

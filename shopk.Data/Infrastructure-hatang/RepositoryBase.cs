@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace shopk.Data.Infrastructure_hatang
 {
-    public abstract class RepositoryBase<T> where T : class
+    //RepositoryBase sẽ kế thừa từ IRepository
+    public abstract class RepositoryBase<T> : IRepository<T> where T : class
     {
+        #region "Properties"
         private MyDbContext dataContext;
         private readonly IDbSet<T> dbSet;
         protected IDbFactory DbFactory
@@ -26,12 +28,16 @@ namespace shopk.Data.Infrastructure_hatang
             }
         }
 
+        //dùng để gọi cho 
         protected RepositoryBase(IDbFactory dbFactory)
         {
             DbFactory = dbFactory;
             dbSet = DbContext.Set<T>();
         }
+        #endregion
 
+        #region "Implementation" 
+        
         public virtual void Add(T entity)
         {
             dbSet.Add(entity);
@@ -102,19 +108,33 @@ namespace shopk.Data.Infrastructure_hatang
             return dataContext.Set<T>().Where<T>(predicate).AsQueryable<T>();
         }
 
-        //public virtual IQueryable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null)
-        //{
-        //    int skipCount = index * size;
-        //    IQueryable<T> _resetSet;
-        //    //Handle includes for associated objects if applicable
-        //    if (includes != null && includes.Count() > 0)
-        //    {
-        //        var query = dataContext.Set<T>().Include(includes.First());
-        //        foreach (var include in includes.Skip(1))
-        //            query = query.Include(include);
-        //        _resetSet = pre
-        //    }
-        //    return dataContext.Set<T>().AsQueryable();
-        //}
+        public virtual IQueryable<T> GetMultiPaging(Expression<Func<T, bool>> predicate, out int total, int index = 0, int size = 20, string[] includes = null)
+        {
+            int skipCount = index * size;
+            IQueryable<T> _resetSet;
+
+            //HANDLE INCLUDES FOR ASSOCIATED OBJECTS IF APPLICABLE
+            if (includes != null && includes.Count() > 0)
+            {
+                var query = dataContext.Set<T>().Include(includes.First());
+                foreach (var include in includes.Skip(1))
+                    query = query.Include(include);
+                _resetSet = predicate != null ? query.Where<T>(predicate).AsQueryable() : query.AsQueryable();
+            }
+            else
+            {
+                _resetSet = predicate != null ? dataContext.Set<T>().Where<T>(predicate).AsQueryable() : dataContext.Set<T>().AsQueryable();
+            }
+
+            _resetSet = skipCount == 0 ? _resetSet.Take(size) : _resetSet.Skip(skipCount).Take(size);
+            total = _resetSet.Count();
+            return _resetSet.AsQueryable();
+        }
+
+        public bool CheckContains(Expression<Func<T, bool>> predicate)
+        {
+            return dataContext.Set<T>().Count<T>(predicate) > 0;
+        }
+        #endregion
     }
 }

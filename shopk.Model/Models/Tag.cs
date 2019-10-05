@@ -13,10 +13,13 @@ namespace shopk.Model.Models
     {
         [Key]
         [MaxLength(50)]
+        [Column(TypeName = "varchar")]
         public string TagID { get; set; }
+
         [MaxLength(50)]
         [Required]
         public string TagName { get; set; }
+
         [MaxLength(50)]
         [Required]
         public string TagType { get; set; }

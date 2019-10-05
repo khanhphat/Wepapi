@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace shopk.Data.Infrastructure_hatang
 {
+    //Dùng để định nghĩa các class generate
     public interface IRepository<T> where T : class
     {
         //Marks an entity as new

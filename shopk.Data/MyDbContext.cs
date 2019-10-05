@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace shopk.Data
 {
+    //Lớp này kế thừa từ dbcontext
     public class MyDbContext : DbContext
     {
         //key connectionstring: ShopKConnection
