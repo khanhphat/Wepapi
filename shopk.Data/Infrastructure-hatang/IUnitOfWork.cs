@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace shopk.Data
+namespace shopk.Data.Infrastructure_hatang
 {
-    public class Class1
+    public interface IUnitOfWork
     {
+        //pthuc commit
+        void Commit();
     }
 }
