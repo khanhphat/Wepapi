@@ -40,5 +40,8 @@ namespace shopk.Model.Models
 
         [ForeignKey("PostCategoryID")]
         public virtual PostCategory PostCategory { get; set; }
+        
+        //trỏ tới danh sách PostTag
+        public virtual IEnumerable<PostTag> PostTags { get; set; }
     }
 }

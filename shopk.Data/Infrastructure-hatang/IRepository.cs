@@ -15,9 +15,12 @@ namespace shopk.Data.Infrastructure_hatang
 
         //Marks an entity as modified
         void Update(T entity);
+        
 
         //removed
         void Delete(T entity);
+        void Delete(int id);
+
         //delete multi records
         void DeleteMulti(Expression<Func<T, bool>> where);
 
