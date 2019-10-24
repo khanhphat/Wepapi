@@ -20,6 +20,7 @@ namespace shopk.Service
         IEnumerable<Post> GetAll();
 
         IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow);
+        IEnumerable<Post> GetAllByCategoryPaging(int categoryId, int page, int pageSize, out int totalRow);
        
         //lay ra 1 bang ghi
         Post GetById(int id);
@@ -74,11 +75,18 @@ namespace shopk.Service
             return _postRepository.GetAll(new string[] { "PostCategory" });
         }
 
+        //khi click vao tung danh muc thi se lay ra pagin
+        public IEnumerable<Post> GetAllByCategoryPaging(int categoryId, int page, int pageSize, out int totalRow)
+        {
+            //neu x=>x.Status = true
+            return _postRepository.GetMultiPaging(x=>x.Status && x.PostCategoryID == categoryId, out totalRow, page,pageSize, new string[] { "PostCategory" });
+        }
+
         public IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)
         {
             //Filter ta sẽ truyền chuỗi lamda
             //TODO: select all post by tag
-            return _postRepository.GetMultiPaging(x=>x.Status, out totalRow, page, pageSize);
+            return _postRepository.GetAllByTag(tag, page, pageSize, out totalRow);
         }
 
         public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
